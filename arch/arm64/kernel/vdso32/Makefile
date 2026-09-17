@@ -170,3 +170,6 @@ vdso.so: $(obj)/vdso.so.dbg
 	$(call cmd,vdso_install)
 
 vdso_install: vdso.so
+
+KBUILD_CPPFLAGS := $(filter-out -Qunused-arguments,$(KBUILD_CPPFLAGS))
+KBUILD_CFLAGS := $(filter-out -Qunused-arguments,$(KBUILD_CFLAGS))
